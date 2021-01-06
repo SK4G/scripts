@@ -1,0 +1,1 @@
+rsync -r -t -v --progress -s $HOME/AwesomeArch/.config $HOME/arcolinuxb-build/archiso/airootfs/etc/skel

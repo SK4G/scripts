@@ -1,0 +1,1 @@
+sudo rsync -r -t -p -v --progress -s /root/ArcoLinuxB-Out $HOME/Desktop
