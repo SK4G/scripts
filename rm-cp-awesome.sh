@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo
 echo "################################################################## "
 tput setaf 2
@@ -5,11 +7,11 @@ echo "Sync to darklinux-iso complete"
 tput sgr0
 echo "################################################################## "
 echo
-rm -f $HOME/darklinux-iso/archiso/airootfs/etc/skel/.config/awesome/rc.lua
-cp -rf $HOME/.config/awesome/rc.lua $HOME/darklinux-iso/archiso/airootfs/etc/skel/.config/awesome/
-cd $HOME/darklinux-iso/
-sh git-v3.sh
-
+#rm -f $HOME/darklinux-iso/archiso/airootfs/etc/skel/.config/awesome/rc.lua
+#cp -rf $HOME/.config/awesome/rc.lua $HOME/darklinux-iso/archiso/airootfs/etc/skel/.config/awesome/
+#cd $HOME/darklinux-iso/
+#sh git-v3.sh
+#xdotool type 'rc.lua update' && xdotool key Return
 
 echo
 echo "################################################################## "
@@ -22,7 +24,7 @@ rm -f $HOME/darklinux/AwesomeArch/awesome/rc.lua
 cp -rf $HOME/.config/awesome/rc.lua $HOME/darklinux/AwesomeArch/awesome/
 cd $HOME/darklinux/AwesomeArch/
 sh git-v3.sh
-
+xdotool type 'rc.lua update' && xdotool key Return
 
 echo
 echo "################################################################## "
@@ -35,7 +37,7 @@ rm -f $HOME/darklinux/darklinux-awesome/awesome/rc.lua
 cp -rf $HOME/.config/awesome/rc.lua $HOME/darklinux/darklinux-awesome/awesome/
 cd $HOME/darklinux/darklinux-awesome/
 sh git-v3.sh
-
+xdotool type 'rc.lua update' && xdotool key Return
 
 echo
 echo "################################################################## "
@@ -48,7 +50,7 @@ rm -f $HOME/darklinux/darklinux-awesome-skel/etc/skel/.config/awesome/rc.lua
 cp -rf $HOME/.config/awesome/rc.lua $HOME/darklinux/darklinux-awesome-skel/etc/skel/.config/awesome/
 cd $HOME/darklinux/darklinux-awesome-skel/
 sh git-v3.sh
-
+xdotool type 'rc.lua update' && xdotool key Return
 
 echo
 echo "################################################################## "
@@ -59,8 +61,9 @@ echo "################################################################## "
 echo
 cd $HOME/darklinux/darklinux-pkgbuild/darklinux-awesome-skel-git/
 sh build-pkg-config.sh
+xdotool type 'rc.lua update' && xdotool key Return
 
-
+cd $HOME/arco-awesome/installation-scripts/
 #use to remove
 #rm -f
 

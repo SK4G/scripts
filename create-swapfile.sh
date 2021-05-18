@@ -25,16 +25,16 @@ echo "      16GB              4GB                20GB     32GB"
 echo
 
 # edit count below with desired swap file size in mb
-#sudo dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
+sudo dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
 
 # set permissions
-#sudo chmod 600 /swapfile
+sudo chmod 600 /swapfile
 
 # format partition to swap
-#sudo mkswap /swapfile
+sudo mkswap /swapfile
 
 #Activate the swap file
-#sudo swapon /swapfile
+sudo swapon /swapfile
 
 # add "/swapfile none swap defaults 0 0" in location below
 #sudo nano /etc/fstab
