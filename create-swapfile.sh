@@ -25,7 +25,7 @@ echo "      16GB              4GB                20GB     32GB"
 echo
 
 # edit count below with desired swap file size in mb
-sudo dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
+sudo dd if=/dev/zero of=/swapfile bs=1M count=20480 status=progress
 
 # set permissions
 sudo chmod 600 /swapfile
@@ -38,6 +38,9 @@ sudo swapon /swapfile
 
 # add "/swapfile none swap defaults 0 0" in location below
 #sudo nano /etc/fstab
+cd /etc
+echo $'\n/swapfile none swap defaults 0 0' | sudo tee -a fstab
+
 
 #check swappiness value
 #sysctl vm.swappiness
@@ -66,3 +69,12 @@ sudo swapon /swapfile
 #   18 GB	18,432 MB
 #   19 GB	19,456 MB
 #   20 GB	20,480 MB
+
+
+# As mentioned above, since Linux 5.0 it is now possible to create swap files on BTRFS. But they should be non-compressed and NoCOW. Here is how do you actually create such a file:
+
+# Create an empty file: touch /swap
+# Use chattr to set NoCOW attribute to it: chattr +C /swap
+# Verify that C attribute appeared: lsattr /swap
+# Fill it: dd if=/dev/zero of=/swap bs=1M count=1024 # for 1 gigabyte
+# mkswap /swap && chmod 600 /swap && swapon /swap
