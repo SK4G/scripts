@@ -1,0 +1,49 @@
+#use when signature fails unknown trust
+pacman-key --refresh-keys 
+
+sudo pacman -Su archlinux-keyring
+
+ssh <user>@<IP>
+
+#check disk usage
+dstat -tdD total,sdb2,nvme0n1p1 60
+dstat -tdD total,sdd,sdc 60
+
+#check S.M.A.R.T disk data
+sudo smartctl -a -d cciss,0 /dev/sdc
+
+#check cpu
+cat /proc/cpuinfo | grep MHz
+
+#TRIM SSD
+sudo fstrim -a
+
+
+ssh root@192.168.1.65
+
+chia keys show --show-mnemonic-seed
+grep -i "total time" $HOME/chialogs/*.log |awk '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*6*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+
+cat ~/chialogs/T* | grep "Total time"
+cat ~/chialogs/T1* | grep "Time for phase"
+cat ~/chialogs/`date "+%Y.%m.%d"`/T1-`date "+%Y.%m.%d"`* | grep "Time for phase"
+
+
+# use to update terminal window title with command executed
+trap 'echo -ne "\033]2;$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//g")\007"' DEBUG
+
+First, select the lines you want to comment/uncomment (CTRL+L is convenient to select a few lines)
+
+Then:
+
+To toggle line comments, execute editor.action.commentLine (CTRL+/ on Windows)
+
+or
+
+To add line comments, execute editor.action.addCommentLine (CTRL+K CTRL+C)
+
+To remove line comments, execute editor.action.removeCommentLine (CTRL+K CTRL+U)
+
+or
+
+To toggle a block comment, execute editor.action.blockComment (SHIFT-ALT-A)
