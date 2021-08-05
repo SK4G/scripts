@@ -32,6 +32,9 @@ cat ~/chialogs/`date "+%Y.%m.%d"`/T1-`date "+%Y.%m.%d"`* | grep "Time for phase"
 # use to update terminal window title with command executed
 trap 'echo -ne "\033]2;$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//g")\007"' DEBUG
 
+#use to get window class for awesomewm rules
+xprop | grep -i 'class'
+
 First, select the lines you want to comment/uncomment (CTRL+L is convenient to select a few lines)
 
 Then:

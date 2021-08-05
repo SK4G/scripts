@@ -1,6 +1,8 @@
 #!/bin/bash
 #set -e
 
+rm -rf $HOME/arcolinuxl-iso
+
 git clone https://github.com/arcolinux/arcolinuxl-iso.git
 
 cd $HOME/arcolinuxl-iso/archiso/

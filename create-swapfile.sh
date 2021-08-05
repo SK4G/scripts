@@ -23,7 +23,7 @@ echo "       8GB              3GB                11GB     16GB"
 echo "      12GB              3GB                15GB     24GB"
 echo "      16GB              4GB                20GB     32GB"
 echo
-
+sudo dd if=/dev/zero of=swapfile bs=1MiB count=$((20*1024)) status=progress && sync && sudo chmod 0600 /swapfile && sudo mkswap /swapfile
 # edit count below with desired swap file size in mb
 sudo dd if=/dev/zero of=/swapfile bs=1M count=20480 status=progress
 
