@@ -17,3 +17,5 @@ sh git-v3.sh
 
 cd $HOME/darklinux/darklinux-repo/
 sh repo-scan-git-v3.sh
+
+rsync -r -t -v --progress -s /home/luiz/darklinux/ /run/media/luiz/TEAM-1TB/darklinux/
