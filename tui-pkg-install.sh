@@ -33,6 +33,11 @@ sudo pacman -S mpv --noconfirm --needed         #ytfzf video player
 sudo pacman -S kitty --noconfirm --needed       #ytfzf thumbnailer
 yay -S --noconfirm --needed ytfzf               #youtube fzf player
 sudo sed -i 's/thumbnail_viewer:=ueberzug/thumbnail_viewer:=kitty/g' /usr/local/bin/ytfzf
+mkdir $HOME/.config/ytfzf
+touch $HOME/.config/ytfzf/subscriptions
+echo "################################################################"
+echo "####  enter subscription urls in $HOME/.config/ytfzf/subscriptions  ######"
+echo "################################################################"
 
 echo "################################################################"
 echo "####           installing fzf-bash-completion             ######"
