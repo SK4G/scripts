@@ -93,7 +93,7 @@ EOF
 #EOF
 
 # Create user
-apk add doas sudo
+apk add doas
 adduser $USER -D
 passwd
 adduser $USER wheel
