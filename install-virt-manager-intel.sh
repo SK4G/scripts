@@ -11,6 +11,7 @@
 sudo pacman -Rdd iptables --noconfirm
 sudo pacman -S --noconfirm --needed iptables-nft
 sudo pacman -S --noconfirm --needed ebtables 
+sudo pacman -S --noconfirm --needed libguestfs
 
 sudo pacman -S --noconfirm --needed qemu
 sudo pacman -S --noconfirm --needed virt-manager
@@ -31,8 +32,8 @@ sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 
 
-#echo -e "options kvm_intel nested=1" | sudo tee -a /etc/modprobe.d/kvm_intel.conf
-echo -e "options kvm_amd nested=1" | sudo tee -a /etc/modprobe.d/kvm_amd.conf
+echo -e "options kvm_intel nested=1" | sudo tee -a /etc/modprobe.d/kvm_intel.conf
+#echo -e "options kvm_amd nested=1" | sudo tee -a /etc/modprobe.d/kvm_amd.conf
 
 user=$(whoami)
 sudo gpasswd -a $user libvirt
