@@ -4,6 +4,7 @@ set -e
 ### This script has only been tested to work on Arch Linux.
 ### It may be modified for other distros. 
 ### Debian uses resilio-sync.service insted of rslsync.service
+### source: https://blog.benjie.me/installing-resilio-sync-and-running-it-as-a-regular-user/
 
 tput setaf 6
 echo "################################################################"
