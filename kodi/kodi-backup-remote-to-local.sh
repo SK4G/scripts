@@ -2,7 +2,7 @@
 
 
 kodi=/mnt/TEAM-1TB/Android/kodi-pc-backup-w-addons
-remote=192.168.1.116
+remote=192.168.1.109
 
 #mkdir -p $kodi/addons/skin.eminence.2/
 scp -r root@$remote:/storage/.kodi/* $kodi/.kodi

@@ -1,0 +1,199 @@
+adb shell pm clear com.amazon.device.software.ota
+adb shell pm hide com.amazon.device.software.ota
+
+adb shell pm disable-user --user 0 com.amazon.device.software.ota.override
+adb shell pm disable-user --user 0 com.amazon.device.software.ota
+
+pm uninstall -k --user 0 com.amazon.dcp
+pm uninstall -k --user 0 com.amazon.dcp.contracts.framework.library
+pm uninstall -k --user 0 com.amazon.dcp.contracts.library
+pm uninstall -k --user 0 com.amazon.device.software.ota
+pm uninstall -k --user 0 com.amazon.device.software.ota.override
+pm uninstall -k --user 0 com.amazon.settings.systemupdates
+pm uninstall -k --user 0 com.amazon.device.software.ota.handler.OtaTaskHandler
+pm uninstall -k --user 0 com.amazon.device.logmanager
+pm uninstall -k --user 0 com.amazon.franktvinput
+pm uninstall -k --user 0 com.amazon.alexashopping
+
+pm clear com.amazon.dcp
+pm clear com.amazon.dcp.contracts.framework.library
+pm clear com.amazon.dcp.contracts.library
+pm clear com.amazon.device.software.ota
+pm clear com.amazon.device.software.ota.override
+pm clear com.amazon.settings.systemupdates
+pm clear com.amazon.device.software.ota.handler.OtaTaskHandler
+pm clear com.amazon.device.logmanager
+pm clear com.amazon.franktvinput
+pm clear com.amazon.alexashopping
+
+/data/app/com.amazon.tahoe-2/base.apk
+/data/app/com.amazon.shoptv.client-1/base.apk
+/system/priv-app/MetricsService/MetricsService.apk
+/data/app/com.amazon.bueller.music-1/base.apk
+/data/app/com.amazon.bueller.photos-1/base.apk
+/system/app/AmazonDeviceMetrics/AmazonDeviceMetrics.apk
+/data/app/com.amazon.imdb.tv.android.app-1/base.apk
+/system/priv-app/com.amazon.ags.app/com.amazon.ags.app.apk
+/data/app/com.amazon.hedwig-1/base.apk
+/data/app/com.amazon.shoptv.firetv.client-1/base.apk
+/data/app/com.amazon.cloud9-1/base.apk
+
+#pre-debloat
+Total RAM: 1556020 kB (status normal)
+Avail RAM: 485744 kB
+ Free RAM: 577064 kB (258732 cached pss + 229208 cached kernel + 89124 free)
+ Used RAM: 958735 kB (825315 used pss + 133420 kernel)
+ Lost RAM: 20221 kB
+
+#after debloat
+Total RAM: 1556020 kB (status normal)
+Avail RAM: 743488 kB
+ Free RAM: 619653 kB (141109 cached pss + 399672 cached kernel + 78872 free)
+ Used RAM: 904584 kB (776544 used pss + 128040 kernel)
+ Lost RAM: 31783 kB
+
+
+com.amazon.alexamediaplayer.runtime.ftv
+com.amazon.net.smartconnect
+com.amazon.tv.resolutioncycler
+com.amazon.recess
+com.amazon.platform.fdrw
+com.amazon.tv.turnstile
+com.amazon.ssmsys
+com.amazon.tv.arc
+com.amazon.tv.ime
+com.amazon.whisperplay.contracts
+com.amazon.device.rdmapplication
+com.amazon.venezia
+com.amazon.dcp.contracts.library
+com.amazon.ftv.xpicker
+com.amazon.metrics.api
+com.amazon.vizzini
+com.amazon.device.controllermanager
+com.amazon.bueller.notification
+com.amazon.bueller.photos
+com.amazon.device.sync
+com.amazon.device.logmanager
+com.amazon.appaccesskeyprovider
+com.amazon.shoptv.firetv.client
+com.amazon.dpcclient
+com.amazon.ceviche
+com.amazon.amazonvideo.livingroom.firetv
+com.amazon.alta.h2clientservice
+com.amazon.tv.parentalcontrols
+com.amazon.ftv.screensaver
+com.amazon.malcolm
+com.amazon.tv.ottssolib
+com.amazon.ftv.glorialist
+com.amazon.dp.logger
+com.amazon.ods.kindleconnect
+com.amazon.alexa.datastore.app
+com.amazon.tv.intentsupport
+com.amazon.sharingservice.android.client.proxy
+com.amazon.wcast.sink
+com.amazon.webview
+com.amazon.android.marketplace
+com.amazon.prism.android.service
+com.amazon.tifobserver
+com.amazon.dialservice
+com.amazon.client.metrics.api
+com.amazon.aca
+com.amazon.ale
+com.amazon.cpl
+com.amazon.dcp
+com.amazon.imp
+com.amazon.ssm
+com.amazon.tv.easyupgrade
+com.amazon.sync.service
+com.amazon.fireinputdevices
+com.amazon.tv.settings.v2
+com.amazon.tv.csapp
+com.amazon.diode
+com.amazon.logan
+com.amazon.tahoe
+com.amazon.tcomm
+com.amazon.tv.sc
+com.amazon.ftvads.deeplinking
+com.amazon.tv.legalresources
+com.amazon.storm.lightning.tutorial
+com.amazon.identity.auth.device.authorization
+com.amazon.kindleautomatictimezone
+com.amazon.tv.fw.metrics
+com.amazon.firehomestarter
+com.amazon.securitysyncclient
+com.amazon.firerestapiframework
+com.amazon.tv.routing
+com.amazon.device.messaging
+com.amazon.tv.ffsprovisioneeclient
+com.amazon.ftv.profilepicker
+com.amazon.device.metrics
+com.amazon.device.messaging.sdk.internal.library
+com.amazon.providers
+com.amazon.tv.ottssocompanionapp
+com.amazon.tv.alexanotifications
+com.amazon.device.sale.service
+com.amazon.cardinal
+com.amazon.tcomm.client
+com.amazon.tv.website_launcher
+com.amazon.tv.forcedotaupdater.v2
+com.amazon.client.metrics
+com.amazon.device.settings.sdk.internal.library
+com.amazon.acos.providers.UnifiedSettingsProvider
+com.amazon.device.details
+com.amazon.imdb.tv.android.app
+com.amazon.tmm.tutorial
+com.amazon.wha.mediabrowserservice
+com.amazon.device.software.ota
+com.amazon.wifilocker
+com.amazon.dcp.contracts.framework.library
+com.amazon.device.bluetoothdfu
+com.amazon.storm.lightning.services
+com.amazon.whisperlink.core.android
+com.amazon.kor.demo
+com.amazon.device.messaging.sdk.library
+com.amazon.tv.notificationcenter
+com.amazon.tv.support
+com.amazon.ags.app
+com.amazon.tv.alexaalerts
+com.amazon.tv.oobe
+com.amazon.sync.provider.ipc
+com.amazon.tv.legal.notices
+com.amazon.tv.settings.core
+com.amazon.minerva.client.api
+com.amazon.firebat
+com.amazon.tv.keypolicymanager
+com.amazon.android.service.networkmonitor
+com.amazon.kso.blackbird
+com.amazon.providers.contentsupport
+com.amazon.avl.ftv
+com.amazon.awvflingreceiver
+com.amazon.device.crashmanager
+com.amazon.application.compatibility.enforcer
+com.amazon.whisperplay.service.install
+com.amazon.tv.launcher
+com.amazon.shoptv.client
+com.amazon.device.software.ota.override
+com.amazon.alexashopping
+com.amazon.franktvinput
+com.amazon.adep
+com.amazon.aria
+com.amazon.avod
+com.amazon.tcomm.jackson
+com.amazon.communication.discovery
+com.amazon.alexa.externalmediaplayer.fireos
+com.amazon.tv.releasenotes
+com.amazon.bluetoothinternals
+com.amazon.ssdpservice
+com.amazon.device.settings
+com.amazon.cloud9
+com.amazon.tv.livetv
+com.amazon.device.sync.sdk.internal
+com.amazon.gloria.graphiq
+com.amazon.connectivitydiag
+com.amazon.device.lowstoragemanager
+com.amazon.providers.tv
+com.amazon.webview.chromium
+com.amazon.bueller.music
+com.amazon.hedwig
+com.amazon.katoch
+com.amazon.application.compatibility.enforcer.sdk.library

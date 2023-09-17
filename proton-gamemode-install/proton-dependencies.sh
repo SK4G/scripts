@@ -35,6 +35,8 @@ case $CHOICE in
       ;;
     3 )
 			sudo pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+			#steam linux dependency
+			sudo pacman -S lib32-libnm
       ;;
     * )
       echo "#################################"

@@ -15,6 +15,9 @@ sudo sed -i 's/#unix_sock_rw_perms\ =\ "0770"/unix_sock_rw_perms\ =\ "0770"/g' /
 #unix_sock_group = "libvirt"
 #unix_sock_rw_perms = "0770"
 #sudo getent group | grep libvirtd
+#echo -e "options kvm_intel nested=1" | sudo tee -a /etc/modprobe.d/kvm_intel.conf
+echo -e "options kvm_amd nested=1" | sudo tee -a /etc/modprobe.d/kvm_amd.conf
+
 
 sudo systemctl enable --now libvirtd
 sudo systemctl enable --now virtqemud
