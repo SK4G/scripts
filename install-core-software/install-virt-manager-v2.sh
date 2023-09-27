@@ -1,14 +1,20 @@
 #!/bin/bash
+### https://ostechnix.com/solved-cannot-access-storage-file-permission-denied-error-in-kvm-libvirt/
+### https://wiki.archlinux.org/title/Virt-manager#Non_root_KVM_without_Socket
+### check if Kernel-based Virtual Machine (kvm) is supporte at below link
+### https://wiki.archlinux.org/title/KVM
 
 sudo pacman -S --needed qemu virt-manager dnsmasq iptables-nft edk2-ovmf bridge-utils vde2
 
 #sudo pacman -S --noconfirm --needed spice-vdagent
 sudo pacman -S --noconfirm --needed dmidecode
 
+# run virt-manager as user instead of root
 sudo usermod -a -G libvirt $(whoami)
-
 sudo sed -i 's/#unix_sock_group\ =\ "libvirt"/unix_sock_group\ =\ "libvirt"/g' /etc/libvirt/libvirtd.conf
 sudo sed -i 's/#unix_sock_rw_perms\ =\ "0770"/unix_sock_rw_perms\ =\ "0770"/g' /etc/libvirt/libvirtd.conf
+sudo sed -i 's/^#user = "libvirt-qemu"/user = "'"$(whoami)"'"/' /etc/libvirt/qemu.conf
+sudo sed -i '/^#user = "libvirt-qemu"$/a user = "'"$(whoami)"'"' /etc/libvirt/qemu.conf
 
 # Edit /etc/libvirt/libvirtd.conf
 # Uncomment these lines
